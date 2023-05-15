@@ -1,0 +1,78 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@layer base {
+  html {
+    -webkit-tap-highlight-color: transparent;
+    @apply text-base md:text-[14px] 2xl:text-[16px];
+  }
+  body {
+    @apply text-dark;
+  }
+}
+@layer components {
+  .container {
+    @apply mx-auto max-w-screen-2xl px-4 lg:px-12;
+  }
+
+  .btn-primary {
+    @apply w-full rounded-md bg-primary p-3 font-medium text-white disabled:bg-gray-200 disabled:text-gray-400 enabled:hover:bg-primary/90;
+  }
+
+  .btn-gray {
+    @apply w-full rounded-md p-3 font-medium disabled:bg-gray-50 disabled:text-gray-400 enabled:hover:bg-gray-200 bg-gray-100;
+  }
+
+  .label {
+    @apply inline-block py-1 text-sm font-medium;
+  }
+
+  .input-reset {
+    @apply border-none bg-transparent outline-none ring-0;
+  }
+
+  .input {
+    @apply inline-block w-full rounded-md border bg-gray-50 px-3 py-2.5 text-sm outline-none transition-colors focus-within:border-primary focus-within:bg-white focus:border-primary focus:bg-white disabled:border-gray-100 disabled:bg-gray-100;
+  }
+
+  .home-step {
+    @apply relative z-[1] mx-auto w-max text-center text-sm font-medium text-white;
+  }
+
+  .home-step span {
+    @apply relative rounded-full bg-[#FF782C] px-6 py-2;
+  }
+
+  .home-step span:before {
+    content: "";
+    background-color: #f3f3f3;
+    @apply absolute -left-1 top-0 -z-[1] aspect-square h-full scale-[1.6] rounded-full;
+  }
+  .home-step span:after {
+    content: "";
+    background-color: #f3f3f3;
+    @apply absolute -right-1 top-0 -z-[1] aspect-square h-full scale-[1.6] rounded-full;
+  }
+}
+@layer utilities {
+  .separator {
+    @apply flex items-center font-semibold text-dark/40;
+  }
+  .separator::before,
+  .separator::after {
+    content: "";
+    @apply mx-4 h-0.5 flex-1 bg-gray-200;
+  }
+}
+
+.leaflet-top, .leaflet-bottom{
+  z-index: 10 !important;
+}
+.leaflet-control {
+  z-index: 10 !important;
+}
+.cursor-pointer{
+  cursor: pointer;
+}
